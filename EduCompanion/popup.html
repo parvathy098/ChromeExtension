@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduCompanion Tools</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="logo.png" alt="EduCompanion Logo" class="logo" />
+        <button class="bell-button">
+          <img src="bell_icon.png" alt="Notifications" class="bell-icon" />
+        </button>
+        <button class="todo">
+          <img
+            src="timer.png"
+            alt="Timer"
+            class="todo-icon"
+            id="openTimerModal"
+          />
+        </button>
+      </div>
+
+      <div class="features">
+        <h2>What we offer?</h2>
+        <div class="feature-list">
+          <div class="feature-item">
+            <img src="note_icon.png" alt="Note Taking Icon" />
+            <button id="openModal">Note Taking</button>
+          </div>
+          <div class="feature-item">
+            <img src="block_icon.png" alt="Distraction Blocker Icon" />
+            <button id="distraction-blocker-btn">Distraction Blocker</button>
+          </div>
+          <div class="feature-item">
+            <img src="organizer_icon.png" alt="Resource Organizer Icon" />
+            <button id="resource-organizer-btn">Resource Organizer</button>
+          </div>
+        </div>
+        <!-- Add this button in popup.html to open the To-Do List -->
+        <button id="open-todo-modal-btn" class="todo-btn">
+          Open To-Do List
+        </button>
+
+        <!-- To-Do List Modal -->
+        <div id="todo-modal" class="modal">
+          <div class="modal-content">
+            <span class="close-todo-modal-btn">&times;</span>
+            <h3>To-Do List</h3>
+            <input type="text" id="new-todo-input" placeholder="Add new task" />
+            <button id="add-todo-btn">Add</button>
+
+            <ul id="todo-list">
+              <!-- To-do items will be added here dynamically -->
+            </ul>
+
+            <button id="clear-todos-btn">Clear All</button>
+          </div>
+        </div>
+      </div>
+      <!-- Blocker Popup -->
+      <div id="blocker-popup" class="popup">
+        <div class="popup-content">
+          <span class="close-blocker-btn">&times;</span>
+          <h2>Distraction Blocker</h2>
+          <input
+            type="text"
+            id="block-site-input"
+            placeholder="Enter site URL"
+          />
+          <button id="add-block-site-btn">Add Site</button>
+          <h3>Blocked Sites</h3>
+          <ul id="blocked-sites-list"></ul>
+          <button id="clear-blocked-sites-btn">Clear All</button>
+          <button id="start-blocking-btn">Start Blocking</button>
+          <button id="stop-blocking-btn">Stop Blocking</button>
+        </div>
+      </div>
+
+      <div id="resource-organizer-popup" class="popup">
+        <div class="popup-content">
+          <span class="close-btn">&times;</span>
+          <h2>Resource Organizer</h2>
+          <input type="text" id="resource-tag" placeholder="Enter Tag" />
+          <button id="save-resource-btn">Save Resource</button>
+          <button id="view-saved-resources-btn">Saved Resources</button>
+        </div>
+      </div>
+
+      <div id="saved-resources-container" class="popup" style="display: none">
+        <div class="popup-content">
+          <span class="close-saved-resources-btn">&times;</span>
+          <h2>Saved Resources</h2>
+          <div id="resource-list"></div>
+          <!-- Container for the saved resources -->
+          <button id="clear-all-btn">Clear All</button>
+          <!-- Clear all button -->
+        </div>
+      </div>
+
+      <!-- Button to display saved notes -->
+      <button id="showSavedNotes" class="saved-notes-btn">Saved Notes</button>
+
+      <!-- Section to display saved notes -->
+      <div id="savedNotesContainer" style="display: none">
+        <h3>Saved Notes</h3>
+        <ul id="savedNotesList"></ul>
+        <button id="clearAllNotes">Clear All</button>
+      </div>
+    </div>
+
+    <!-- Note-Taking Modal -->
+    <div id="noteModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Write Your Notes</h2>
+        <textarea
+          id="noteText"
+          rows="8"
+          cols="40"
+          placeholder="Enter your notes here..."
+        ></textarea>
+        <br />
+        <button id="saveNote">Save Note</button>
+      </div>
+    </div>
+
+    <!-- Timer Modal for Stopwatch -->
+    <div id="timerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeTimerModal">&times;</span>
+        <h2>Stopwatch</h2>
+        <div id="stopwatch">
+          <p id="timerDisplay">00:00</p>
+          <button id="startStopBtn">Start</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

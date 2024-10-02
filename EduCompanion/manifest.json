@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "EduCompanion",
+  "version": "1.0",
+  "description": "A Chrome extension to enhance the online learning experience.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "background",
+    "declarativeNetRequest",
+    "http://localhost:3000/"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
